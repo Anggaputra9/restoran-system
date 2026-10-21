@@ -1,0 +1,8 @@
+<?php
+namespace App\Models;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class Admin extends Authenticatable {
+    protected $guarded = ['id'];
+    protected $hidden = ['password', 'remember_token'];
+    public function microsites() { return $this->belongsToMany(Microsite::class); }
+}
